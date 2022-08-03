@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="output">The number was 3 and you guessed 7 times!</div>
+    <script>
+        let num = Math.floor(Math.random() * 100);
+
+        let guess = prompt("Guess a number between 1 and 100!");
+
+        let gotIt = false;
+
+        let myOutput = "";
+
+        let tGuesses = 0;
+
+        while(gotIt === false){
+
+            tGuesses++;
+
+            if (num == guess)
+        {
+            alert("You got it!");
+           gotIt = true;
+           break;
+        }else{
+
+            if(num > guess){
+                guess = prompt("Higher!");
+
+            }else{
+                guess = prompt("Lower!")
+            }
+         }
+        }
+            myOutput = `The number was ${num} and you guessed ${tGuesses} times!`;
+             document.getElementById('output').innerHTML = myOutput;
+    
+    </script>
+</body>
+</html>
